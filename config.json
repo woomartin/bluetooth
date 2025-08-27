@@ -1,0 +1,94 @@
+{
+  "app": {
+    "bundleName": "com.example.bluetoothprinter",
+    "vendor": "example",
+    "versionCode": 1000000,
+    "versionName": "1.0.0",
+    "icon": "$media:app_icon",
+    "label": "$string:app_name"
+  },
+  "deviceConfig": {
+    "default": {
+      "process": "com.example.bluetoothprinter"
+    }
+  },
+  "module": {
+    "package": "com.example.bluetoothprinter",
+    "name": ".BluetoothPrinterAbility",
+    "mainAbility": ".BluetoothPrinterAbility",
+    "deviceType": [
+      "phone",
+      "tablet"
+    ],
+    "distro": {
+      "deliveryWithInstall": true,
+      "moduleName": "entry",
+      "moduleType": "entry",
+      "installationFree": false
+    },
+    "abilities": [
+      {
+        "skills": [
+          {
+            "entities": [
+              "entity.system.home"
+            ],
+            "actions": [
+              "action.system.home"
+            ]
+          }
+        ],
+        "orientation": "unspecified",
+        "visible": true,
+        "name": ".BluetoothPrinterAbility",
+        "icon": "$media:icon",
+        "description": "$string:description_bluetoothprinterability",
+        "label": "$string:app_name",
+        "type": "page",
+        "launchType": "standard"
+      }
+    ],
+    "reqPermissions": [
+      {
+        "name": "ohos.permission.ACCESS_BLUETOOTH",
+        "reason": "需要访问蓝牙功能来扫描和连接打印机",
+        "usedScene": {
+          "ability": [".BluetoothPrinterAbility"],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.MANAGE_BLUETOOTH",
+        "reason": "需要管理蓝牙功能来控制蓝牙开关状态",
+        "usedScene": {
+          "ability": [".BluetoothPrinterAbility"],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.DISCOVER_BLUETOOTH",
+        "reason": "需要发现蓝牙设备来扫描附近的打印机",
+        "usedScene": {
+          "ability": [".BluetoothPrinterAbility"],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.LOCATION",
+        "reason": "蓝牙扫描功能需要位置权限",
+        "usedScene": {
+          "ability": [".BluetoothPrinterAbility"],
+          "when": "inuse"
+        }
+      },
+      {
+        "name": "ohos.permission.APPROXIMATELY_LOCATION",
+        "reason": "蓝牙扫描功能需要大致位置权限",
+        "usedScene": {
+          "ability": [".BluetoothPrinterAbility"],
+          "when": "inuse"
+        }
+      }
+    ]
+  }
+}
